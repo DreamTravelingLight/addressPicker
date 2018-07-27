@@ -13,6 +13,10 @@
 		9D9C30312109AD7900BD6EE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D9C30302109AD7900BD6EE8 /* Assets.xcassets */; };
 		9D9C30342109AD7900BD6EE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D9C30322109AD7900BD6EE8 /* LaunchScreen.storyboard */; };
 		9D9C30372109AD7900BD6EE8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9C30362109AD7900BD6EE8 /* main.m */; };
+		9D9C30402109AF2F00BD6EE8 /* AddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9C303F2109AF2F00BD6EE8 /* AddressPickerView.m */; };
+		9D9C30442109C39C00BD6EE8 /* AddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9C30432109C39C00BD6EE8 /* AddressModel.m */; };
+		9D9C30472109C9CF00BD6EE8 /* AddressTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9C30462109C9CF00BD6EE8 /* AddressTableView.m */; };
+		9D9C304A210AED7300BD6EE8 /* close_24@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D9C3049210AED7300BD6EE8 /* close_24@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,13 @@
 		9D9C30332109AD7900BD6EE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D9C30352109AD7900BD6EE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D9C30362109AD7900BD6EE8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9D9C303E2109AF2F00BD6EE8 /* AddressPickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddressPickerView.h; sourceTree = "<group>"; };
+		9D9C303F2109AF2F00BD6EE8 /* AddressPickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddressPickerView.m; sourceTree = "<group>"; };
+		9D9C30422109C39C00BD6EE8 /* AddressModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddressModel.h; sourceTree = "<group>"; };
+		9D9C30432109C39C00BD6EE8 /* AddressModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddressModel.m; sourceTree = "<group>"; };
+		9D9C30452109C9CF00BD6EE8 /* AddressTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddressTableView.h; sourceTree = "<group>"; };
+		9D9C30462109C9CF00BD6EE8 /* AddressTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddressTableView.m; sourceTree = "<group>"; };
+		9D9C3049210AED7300BD6EE8 /* close_24@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close_24@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +69,9 @@
 		9D9C30262109AD7900BD6EE8 /* addressPicker */ = {
 			isa = PBXGroup;
 			children = (
+				9D9C3048210AED7300BD6EE8 /* images */,
+				9D9C30412109C11900BD6EE8 /* model */,
+				9D9C303D2109AF1600BD6EE8 /* view */,
 				9D9C30272109AD7900BD6EE8 /* AppDelegate.h */,
 				9D9C30282109AD7900BD6EE8 /* AppDelegate.m */,
 				9D9C302A2109AD7900BD6EE8 /* ViewController.h */,
@@ -69,6 +83,34 @@
 				9D9C30362109AD7900BD6EE8 /* main.m */,
 			);
 			path = addressPicker;
+			sourceTree = "<group>";
+		};
+		9D9C303D2109AF1600BD6EE8 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				9D9C303E2109AF2F00BD6EE8 /* AddressPickerView.h */,
+				9D9C303F2109AF2F00BD6EE8 /* AddressPickerView.m */,
+				9D9C30452109C9CF00BD6EE8 /* AddressTableView.h */,
+				9D9C30462109C9CF00BD6EE8 /* AddressTableView.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		9D9C30412109C11900BD6EE8 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				9D9C30422109C39C00BD6EE8 /* AddressModel.h */,
+				9D9C30432109C39C00BD6EE8 /* AddressModel.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		9D9C3048210AED7300BD6EE8 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				9D9C3049210AED7300BD6EE8 /* close_24@2x.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,6 +174,7 @@
 				9D9C30342109AD7900BD6EE8 /* LaunchScreen.storyboard in Resources */,
 				9D9C30312109AD7900BD6EE8 /* Assets.xcassets in Resources */,
 				9D9C302F2109AD7900BD6EE8 /* Main.storyboard in Resources */,
+				9D9C304A210AED7300BD6EE8 /* close_24@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,7 +185,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D9C30442109C39C00BD6EE8 /* AddressModel.m in Sources */,
 				9D9C302C2109AD7900BD6EE8 /* ViewController.m in Sources */,
+				9D9C30472109C9CF00BD6EE8 /* AddressTableView.m in Sources */,
+				9D9C30402109AF2F00BD6EE8 /* AddressPickerView.m in Sources */,
 				9D9C30372109AD7900BD6EE8 /* main.m in Sources */,
 				9D9C30292109AD7900BD6EE8 /* AppDelegate.m in Sources */,
 			);
