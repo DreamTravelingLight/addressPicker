@@ -47,6 +47,7 @@
 - (void)addPickerView {
     
     [AddressPickerView showPickerViewWithFrame:CGRectMake(0, kScreenHeight-300, kScreenWidth, 300) AddressDataArray:_dataArray resultBlock:^(AddressModel *provinceModel, AddressModel *cityModel, AddressModel *districtModel, NSString *addressStr) {
+        
         NSLog(@"--province : %@ -- city : %@  district : %@",provinceModel.name,cityModel.name,districtModel.name);
         _textLab.text = addressStr;
         
@@ -72,7 +73,6 @@
                 [arrM addObject:model];
             }
             _dataArray = [arrM copy];
-//            [self addPickerView];
             NSLog(@"----success---");
         }
     }];
