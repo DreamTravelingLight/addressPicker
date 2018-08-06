@@ -48,21 +48,15 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ident];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ident];
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
         
         cell.textLabel.font = [UIFont systemFontOfSize:15];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
     AddressModel *model = _dataArray[indexPath.row];
     cell.textLabel.text = model.name;
-    if ([model isEqual:_selectModel]) {
-        
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-        cell.backgroundColor = RGB(255,238,238);
-    }else{
-        cell.accessoryType = UITableViewCellAccessoryNone;
-        cell.backgroundColor = [UIColor whiteColor];
-    }
+    
+    cell.accessoryType = [model isEqual:_selectModel] ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
     
     return cell;
 }

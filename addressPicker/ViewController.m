@@ -16,7 +16,7 @@
 
 {
     NSArray *_dataArray;
-    UILabel *_textLab;
+    __weak UILabel *_textLab;
 }
 @property (nonatomic, strong) AddressPickerView *addressView;
 
@@ -29,18 +29,27 @@
     
     
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.frame = CGRectMake(100, 100, 100, 40);
+    btn.bounds = CGRectMake(0, 0, 100, 40);
+    btn.center = CGPointMake(self.view.center.x, 100);
     [btn setTitle:@"显示" forState:UIControlStateNormal];
     btn.backgroundColor = [UIColor blackColor];
     [btn addTarget:self action:@selector(buttonClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
     
+    UILabel *textLab = [[UILabel alloc] initWithFrame:CGRectMake(20, 180, CGRectGetWidth(self.view.frame)-40, 40)];
+    textLab.textAlignment = NSTextAlignmentCenter;
+    textLab.textColor = [UIColor grayColor];
+    [self.view addSubview:textLab];
+    _textLab = textLab;
+    
     [self requestAddressData];
 }
 - (void)addPickerView {
     
-    [AddressPickerView showPickerViewWithFrame:CGRectMake(0, kScreenHeight-300, kScreenWidth, 300) AddressDataArray:_dataArray resultBlock:^(AddressModel *provinceModel, AddressModel *cityModel, AddressModel *districtModel) {
+    [AddressPickerView showPickerViewWithFrame:CGRectMake(0, kScreenHeight-300, kScreenWidth, 300) AddressDataArray:_dataArray resultBlock:^(AddressModel *provinceModel, AddressModel *cityModel, AddressModel *districtModel, NSString *addressStr) {
         NSLog(@"--province : %@ -- city : %@  district : %@",provinceModel.name,cityModel.name,districtModel.name);
+        _textLab.text = addressStr;
+        
     }];
 }
 #pragma mark - request data

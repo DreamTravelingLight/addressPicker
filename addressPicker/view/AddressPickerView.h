@@ -19,7 +19,7 @@ typedef NS_ENUM(NSUInteger, pickerViewSelectType) {
 
 @interface AddressPickerView : UIView
 
-typedef void (^selectBlock)(AddressModel *provinceModel , AddressModel *cityModel , AddressModel *districtModel);
+typedef void (^selectBlock)(AddressModel *provinceModel , AddressModel *cityModel , AddressModel *districtModel, NSString *addressStr);
 
 + (void)showPickerViewWithFrame:(CGRect)frame AddressDataArray:(NSArray *)dataArray resultBlock:(selectBlock)block;
 

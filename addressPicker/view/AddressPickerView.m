@@ -28,7 +28,7 @@
 
 @property (nonatomic, copy) NSArray *addressArr;
 
-@property (nonatomic, copy) void (^selectBlock)(AddressModel *provinceModel , AddressModel *cityModel , AddressModel *districtModel);
+@property (nonatomic, copy) void (^selectBlock)(AddressModel *provinceModel , AddressModel *cityModel , AddressModel *districtModel, NSString *addressStr);
 
 @end
 
@@ -258,8 +258,16 @@
 #pragma mark - method
 ///隐藏弹出视图
 - (void)hidePickerView {
-    
-    !self.selectBlock ?: self.selectBlock(_provinceModel,_cityModel,_districtModel);
+    if (_provinceModel) {
+        NSMutableString *addressM = [NSMutableString stringWithString:_provinceModel.name];
+        if (_cityModel) {
+            [addressM appendString:_cityModel.name];
+            if (_districtModel) {
+                [addressM appendString:_districtModel.name];
+            }
+        }
+        !self.selectBlock ?: self.selectBlock(_provinceModel,_cityModel,_districtModel,[addressM copy]);
+    }
     [UIView animateWithDuration:0.3 animations:^{
         
         //在动画过程中禁止遮罩视图响应用户手势
